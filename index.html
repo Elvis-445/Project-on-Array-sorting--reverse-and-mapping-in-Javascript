@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project on Array Sorting, Reverse and Mapping in JavaScript</title>
+    <style>
+        button{
+            height: 45px;
+            color: wheat;
+            background-color: rosybrown;
+            border: 3.8px solid burlywood;
+            border-radius: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body{
+            text-align: center;
+            align-items: center;
+            background-color: antiquewhite
+        }
+    </style>
+</head>
+<body>
+    <h3 style="color: rosybrown">Click to Sort the following:</h3>
+    <p id="sorted"></p>
+    <p id="map"></p>
+    <button onclick="ascending()">Click to Ascend the above Numbers</button> <br> <br>
+    <button onclick="descending()">Click to Descend the above Numbers</button> <br> <br>
+    <button onclick="mapPoints()">Click to Map the above Numbers</button>
+    <script>
+        var outcome=[10,86,52,73,526,28,253,624.633,3761,75,816,65,67,1002,10873,176,836,15,15,135,826,73,2752,2756,2281,281,937]
+        document.getElementById("sorted").innerHTML=outcome
+        function ascending(){ //In Ascending Order
+            outcome.sort(function(a,b){return (a-b)});
+            document.getElementById("sorted").innerHTML=outcome
+        }
+        function descending(){ //In Descending Order
+            outcome.reverse(function(a,b){return (b-a)});
+            document.getElementById("sorted").innerHTML=outcome
+        }
+        function myFunction(value) { //Value of the Map
+            return value/10
+        }
+        function mapPoints() { //Mapped
+            var mapped=outcome.map(myFunction);
+            document.getElementById("map").innerHTML=mapped;
+        }
+    </script>
+</body>
+</html>
